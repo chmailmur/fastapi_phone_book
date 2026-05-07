@@ -2,9 +2,14 @@ from fastapi import APIRouter, Form, Request, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse
 from app.schemas.contact import dictionary, contact_list
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 router = APIRouter()
-templates = Jinja2Templates(directory='templates')
+
+templates = Jinja2Templates(directory=BASE_DIR/'templates')
 
 @router.get('/', response_class=HTMLResponse)
 async def show_form(request: Request):
