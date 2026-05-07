@@ -9,11 +9,10 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 dockerfile_path = BASE_DIR / 'Dockerfile'
-
+homework_0X_path = './'
 
 if not (dockerfile_path.is_file() and len(dockerfile_path.read_text().splitlines()) > 5):
     pytestmark = pytest.mark.skip("Dockerfile is not ready")
-
 
 fake = Faker()
 
