@@ -1,11 +1,13 @@
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 router = APIRouter()
 
-templates = Jinja2Templates(directory='templates')
-
+templates = Jinja2Templates(directory=BASE_DIR/'templates')
 
 
 @router.get("/")
