@@ -1,0 +1,23 @@
+<table class="table table-sm table-bordered text-center w-50 mx-auto">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Возраст</th>
+            <th>Номер</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for contact in contacts %}
+        {% if contact is not none %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.age }}</td>
+                <td>{{ contact.phone }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
