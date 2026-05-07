@@ -19,7 +19,3 @@ app.include_router(contacts_router, tags=['API Contacts'], prefix='/contacts')
 app.include_router(view_form_router, tags=['API form'], prefix='/view_form')
 
 app.include_router(manager_router, tags=['API Contact manager'], prefix='/manager')
-
-
-if __name__ == '__main__':
-    uvicorn.run(app='main:app', host='127.0.0.1', port=8000, reload=True)
