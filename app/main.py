@@ -1,10 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
-from routers.hello import router as hello_router
-from routers.about import router as about_router
-from routers.contacts import router as contacts_router
-from routers.view_form import router as view_form_router 
-from routers.manager import router as manager_router 
+from app.routers.hello import router as hello_router
+from app.routers.about import router as about_router
+from app.routers.contacts import router as contacts_router
+from app.routers.view_form import router as view_form_router 
+from app.routers.manager import router as manager_router 
 
 
 

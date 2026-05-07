@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Form, Request, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse
-from schemas.contact import dictionary, contact_list
+from app.schemas.contact import dictionary, contact_list
 
 router = APIRouter()
 templates = Jinja2Templates(directory='templates')
