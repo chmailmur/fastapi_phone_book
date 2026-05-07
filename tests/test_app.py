@@ -5,13 +5,11 @@ import docker
 import requests
 import pytest
 from faker import Faker
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+dockerfile_path = BASE_DIR / 'Dockerfile'
 
-current_file = Path(__file__).resolve()
-folder_test_homework_0X = current_file.parent
-homework_0X = folder_test_homework_0X.name.replace("test_", "")
-homework_0X_path = folder_test_homework_0X.parent.parent / homework_0X
-dockerfile_path = homework_0X_path / "Dockerfile"
 
 if not (dockerfile_path.is_file() and len(dockerfile_path.read_text().splitlines()) > 5):
     pytestmark = pytest.mark.skip("Dockerfile is not ready")
@@ -64,5 +62,5 @@ def run_image(docker_client, build_image):
 
 def test_build_and_run_app(run_image):
     print("sending request to the image")
-    resp: requests.Response = requests.get(f"http://localhost:{LOCAL_PORT}/ping/")
+    resp: requests.Response = requests.get(f"http://localhost:{LOCAL_PORT}")
     assert resp.status_code == 200
