@@ -25,14 +25,40 @@ phone — номер телефона
 age — возраст 
 
 ============================================================
+СТРУКТУРА
 
+
+├── app/
+│   ├── main.py
+│   ├── routers/
+│   ├── schemas/
+│   └── templates/
+│
+├── requirements.txt
+├── Dockerfile
+└── .dockerignore
+
+
+============================================================
 
 ЗАПУСК ПРИЛОЖЕНИЯ
 
-Установите зависимости:
+Установка
 
-pip install -r requirements.txt
+Проверить версию docker
 
-Запустите приложение:
+docker --version
 
-py main.py
+Пройти в каталог fastapi_phone_book
+
+cd fastapi_phone_book
+
+Собрать Контейнер
+
+docker build -t fastapi-app .
+
+Запуск 
+
+docker run -p 8000:8000 fastapi-app
+
+В праузере перейти по адресу http://localhost:8000
